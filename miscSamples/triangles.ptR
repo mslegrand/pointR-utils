@@ -1,0 +1,21 @@
+library(svgR)
+library(tidyverse)
+WH<-c(600,400)
+
+# Defined by mouse: edit with care!
+ptR<-list(
+  x= tribble(
+      ~fill,      ~points,
+      '#3B4D4D',  matrix( c(c(93,99),c(101,159),c(202,116)), 2),
+      '#B8B358',  matrix( c(c(168,200),c(258,159),c(284,210)), 2),
+      'red',      matrix( c(c(164,332),c(240,276),c(301,309)), 2),
+      '#FB03FF',  matrix( c(c(336,106),c(346,44),c(396,90)), 2),
+      '#03FF18',  matrix( c(c(360,233),c(376,177),c(414,192)), 2),
+      '#030BFF',  matrix( c(c(371,311),c(419,265),c(454,345)), 2)
+  )
+)
+
+svgR(wh=WH,
+    pmap(ptR$x, polygon)
+)
+
