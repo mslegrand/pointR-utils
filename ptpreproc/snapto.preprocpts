@@ -1,0 +1,27 @@
+
+list(
+onNewPt=
+"pt<-getPoint() # pt contains coordinates derived from the mouse move
+
+pt= 50*round(.02*pt)
+
+tibs<-insertPoint(pt=pt, location=getLocation() )
+tibs # always return tibs
+",
+onMovePt=
+"pt<-getPoint() # pt contains coordinates derived from the mouse move
+
+pt= 50*round(.02*pt)
+
+tibs<-movePoint(pt=pt, location=getLocation() )
+tibs # always return tibs
+",
+onMoveMat=
+"dxy<-getDxy() # pt contains coordinates derived from the mouse move
+
+dxy= 50*round(.02*dxy)
+
+tibs<-moveMatrix(dxy=dxy, location=getLocation() )
+tibs # always return tibs
+"
+)

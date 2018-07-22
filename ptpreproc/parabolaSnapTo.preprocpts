@@ -1,0 +1,26 @@
+list(
+onNewPt = '# template for point insertion precprossing
+
+pt<-getPoint() # pt contains coordinates derived from the mouse click
+
+# apply your point manipulations here
+pt[2]<-.01*(pt[1]-300)^2
+tibs<-insertPoint(pt=pt, location=getLocation() )
+tibs # always return tibs',
+onMovePt = '# template for point insertion precprossing
+
+pt<-getPoint() # pt contains coordinates derived from the mouse move
+
+#apply your point manipulations here
+
+tibs<-movePoint(pt=pt, location=getLocation() )
+tibs # always return tibs',
+onMoveMat = '# template for point insertion precprossing
+
+dxy=getDxy() # pt contains coordinates derived from the mouse move
+
+#apply your point manipulations here
+
+tibs<-moveMatrix(dxy=dxy, location=getLocation() )
+tibs # always return tibs'
+)
